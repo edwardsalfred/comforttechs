@@ -1,5 +1,5 @@
 /* ======================================================================
-   Comfort Techs — design system
+   Comfort Techs design system
    ====================================================================== */
 :root{
   --ink:#0B1220;
@@ -179,7 +179,7 @@ p{margin:0 0 14px}
 .hero .video-bg iframe{
   position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
   width:100%;height:100%;
-  /* Force 16:9 video to cover any hero aspect — viewport-relative cover */
+  /* Force 16:9 video to cover any hero aspect (viewport-relative cover) */
   min-width:177.78vh;
   min-height:56.25vw;
   border:0;
@@ -243,7 +243,7 @@ p{margin:0 0 14px}
 .hero-trust .item .ico{width:20px;height:20px;color:var(--ember);flex-shrink:0}
 .hero-trust .item b{color:#fff;font-weight:600;letter-spacing:.02em}
 
-/* (legacy hero-art rules removed — hero now uses .video-bg + .hero-side chips) */
+/* (legacy hero-art rules removed; hero now uses .video-bg + .hero-side chips) */
 
 /* ===================== marquee ===================== */
 .marquee{

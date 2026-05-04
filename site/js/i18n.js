@@ -1,5 +1,5 @@
 /* ======================================================================
-   Comfort Techs — i18n (EN / ES)
+   Comfort Techs i18n (EN / ES)
    Loaded before main.js so DOM strings are correct on first paint.
    ====================================================================== */
 (function () {
@@ -8,8 +8,8 @@
   const I18N = {
     /* page meta */
     'page.title': {
-      en: 'Comfort Techs — Your HVAC Lifesaver in San Antonio | AC, Heating, 24/7',
-      es: 'Comfort Techs — Tu salvavidas HVAC en San Antonio | A/C, Calefacción, 24/7'
+      en: 'Comfort Techs | Your HVAC Lifesaver in San Antonio | AC, Heating, 24/7',
+      es: 'Comfort Techs | Tu salvavidas HVAC en San Antonio | A/C, Calefacción, 24/7'
     },
     'page.desc': {
       en: "Comfort Techs is San Antonio's family-owned, NATE-certified HVAC company. Free same-day estimates, 24/7 emergency service, $89/month financing. Amana Newcomer of the Year 2024 & 2025.",
@@ -29,8 +29,8 @@
                         es: 'San Antonio · Empresa familiar · 24/7' },
     'hero.h1':        { en: 'Your HVAC <span class="accent">lifesaver</span><span class="serif">when Texas turns up the heat.</span>',
                         es: 'Tu <span class="accent">salvavidas</span> de aire<span class="serif">cuando Texas sube el calor.</span>' },
-    'hero.sub':       { en: "Free same-day estimates. Honest upfront pricing. NATE-certified bilingual technicians on call around the clock — because comfort doesn't wait for business hours.",
-                        es: 'Estimados gratis el mismo día. Precios honestos por adelantado. Técnicos bilingües certificados por NATE disponibles a toda hora — porque la comodidad no espera horario de oficina.' },
+    'hero.sub':       { en: "Free same-day estimates. Honest upfront pricing. NATE-certified bilingual technicians on call around the clock. Comfort doesn't wait for business hours.",
+                        es: 'Estimados gratis el mismo día. Precios honestos por adelantado. Técnicos bilingües certificados por NATE disponibles a toda hora. La comodidad no espera horario de oficina.' },
     'hero.cta.call':  { en: 'Call (210) 201-0771', es: 'Llama (210) 201-0771' },
     'hero.cta.req':   { en: 'Request service', es: 'Solicitar servicio' },
     'hero.meta.free': { en: 'Free estimate', es: 'Estimado gratis' },
@@ -63,18 +63,18 @@
     'svc.eyebrow': { en: 'What we do', es: 'Lo que hacemos' },
     'svc.h2':      { en: 'Whole-home <span class="serif">comfort, end to end.</span>',
                      es: 'Comodidad total <span class="serif">de principio a fin.</span>' },
-    'svc.sub':     { en: 'From a 2 a.m. compressor failure to a top-to-bottom Daikin install, our techs handle every system in your home — and a few you didn\'t know we did.',
-                     es: 'Desde una falla de compresor a las 2 a.m. hasta una instalación Daikin completa, nuestros técnicos atienden todo sistema en tu casa — y algunos que no sabías que hacíamos.' },
+    'svc.sub':     { en: 'From a 2 a.m. compressor failure to a top-to-bottom Daikin install, our techs handle every system in your home, plus a few you didn\'t know we did.',
+                     es: 'Desde una falla de compresor a las 2 a.m. hasta una instalación Daikin completa, nuestros técnicos atienden todo sistema en tu casa, además de algunos que no sabías que hacíamos.' },
 
     'svc.1.t':  { en: 'AC Services', es: 'Servicios de A/C' },
     'svc.1.d':  { en: 'Install, repair, maintenance, and tune-ups for every cooling system.',
                   es: 'Instalación, reparación, mantenimiento y afinación para cualquier sistema de enfriamiento.' },
     'svc.2.t':  { en: 'Heating &amp; Furnace', es: 'Calefacción' },
-    'svc.2.d':  { en: 'Heat pumps, furnaces, tune-ups — built for Texas cold snaps.',
-                  es: 'Bombas de calor, calentadores y afinaciones — listos para los fríos de Texas.' },
+    'svc.2.d':  { en: 'Heat pumps, furnaces, tune-ups built for Texas cold snaps.',
+                  es: 'Bombas de calor, calentadores y afinaciones listos para los fríos de Texas.' },
     'svc.3.t':  { en: 'Air Quality', es: 'Calidad del aire' },
-    'svc.3.d':  { en: 'Filtration, purifiers, dehumidifiers, humidifiers — breathe easier.',
-                  es: 'Filtración, purificadores, deshumidificadores, humidificadores — respira mejor.' },
+    'svc.3.d':  { en: 'Filtration, purifiers, dehumidifiers, humidifiers. Breathe easier.',
+                  es: 'Filtración, purificadores, deshumidificadores, humidificadores. Respira mejor.' },
     'svc.4.t':  { en: '24/7 Emergency', es: 'Emergencia 24/7' },
     'svc.4.d':  { en: "Fast bilingual dispatch when comfort can't wait. Day, night, weekend.",
                   es: 'Despacho bilingüe rápido cuando la comodidad no puede esperar. Día, noche, fines de semana.' },
@@ -85,8 +85,8 @@
     'svc.6.d':  { en: 'Install and repair for Nest, ecobee, and Daikin smart controls.',
                   es: 'Instalación y reparación de Nest, ecobee y controles inteligentes Daikin.' },
     'svc.7.t':  { en: 'Insulation', es: 'Aislamiento' },
-    'svc.7.d':  { en: 'Attic, blown-in, fiberglass, garage, soundproofing — install or replace.',
-                  es: 'Ático, soplado, fibra de vidrio, garaje, insonorización — instalación o reemplazo.' },
+    'svc.7.d':  { en: 'Attic, blown-in, fiberglass, garage, soundproofing. Install or replace.',
+                  es: 'Ático, soplado, fibra de vidrio, garaje, insonorización. Instalación o reemplazo.' },
     'svc.8.t':  { en: 'Water Heaters', es: 'Calentadores de agua' },
     'svc.8.d':  { en: 'Tankless and traditional install &amp; repair. Free unit with HVAC swap.',
                   es: 'Instalación y reparación de calentadores sin tanque y tradicionales. Unidad gratis con cambio de HVAC.' },
@@ -124,8 +124,8 @@
     'sp.eyebrow':   { en: 'Current offers', es: 'Promociones actuales' },
     'sp.h2':        { en: 'Real numbers. <span class="serif">Real comfort.</span>',
                       es: 'Cifras reales. <span class="serif">Comodidad real.</span>' },
-    'sp.sub':       { en: "Mention the offer when you book. Restrictions apply — we'll walk you through them on the phone.",
-                      es: 'Menciona la promoción al agendar. Aplican restricciones — te las explicamos por teléfono.' },
+    'sp.sub':       { en: "Mention the offer when you book. Restrictions apply. We'll walk you through them on the phone.",
+                      es: 'Menciona la promoción al agendar. Aplican restricciones. Te las explicamos por teléfono.' },
 
     'sp.f.label':   { en: 'Flagship offer', es: 'Promoción estrella' },
     'sp.f.unit':    { en: 'complete system', es: 'sistema completo' },
@@ -159,8 +159,8 @@
     'sp.4.price':   { en: 'Free', es: 'Gratis' },
     'sp.4.unit':    { en: 'duct cleaning', es: 'limpieza de ductos' },
     'sp.4.t':       { en: 'With any HVAC system replacement', es: 'Con cualquier reemplazo de sistema HVAC' },
-    'sp.4.d':       { en: 'Healthier air, more efficient airflow — included on every full system install.',
-                      es: 'Aire más sano, mejor flujo — incluido en cada instalación de sistema completo.' },
+    'sp.4.d':       { en: 'Healthier air, more efficient airflow. Included on every full system install.',
+                      es: 'Aire más sano, mejor flujo. Incluido en cada instalación de sistema completo.' },
 
     /* founder */
     'fdr.badge.unit':  { en: 'years HVAC', es: 'años en HVAC' },
@@ -195,8 +195,8 @@
     'ar.eyebrow': { en: 'Where we work', es: 'Dónde trabajamos' },
     'ar.h2':      { en: 'Serving every corner <span class="serif">of greater San Antonio.</span>',
                     es: 'Atendiendo cada rincón <span class="serif">del gran San Antonio.</span>' },
-    'ar.sub':     { en: "From Stone Oak to Boerne, Schertz to New Braunfels — if you're within reach of the Alamo, we can be at your door same-day.",
-                    es: 'Desde Stone Oak hasta Boerne, de Schertz a New Braunfels — si estás cerca del Álamo, llegamos a tu puerta el mismo día.' },
+    'ar.sub':     { en: "From Stone Oak to Boerne, Schertz to New Braunfels. If you're within reach of the Alamo, we can be at your door same-day.",
+                    es: 'Desde Stone Oak hasta Boerne, de Schertz a New Braunfels. Si estás cerca del Álamo, llegamos a tu puerta el mismo día.' },
     'ar.cta':     { en: 'Check my address', es: 'Verificar mi dirección' },
 
     /* testimonials */
@@ -222,13 +222,13 @@
                       es: 'Emergencia 24/7 · estimados el mismo día' },
     'fn.h2':        { en: 'Comfort starts <span class="accent serif">with a phone call.</span>',
                       es: 'La comodidad empieza <span class="accent serif">con una llamada.</span>' },
-    'fn.sub':       { en: "Tell us what's broken, what's loud, what's leaking — or just that the house is too hot. We'll have a tech on the way.",
-                      es: 'Dinos qué se descompuso, qué hace ruido, qué gotea — o simplemente que la casa está muy caliente. Mandamos un técnico de inmediato.' },
+    'fn.sub':       { en: "Tell us what's broken, what's loud, what's leaking, or just that the house is too hot. We'll have a tech on the way.",
+                      es: 'Dinos qué se descompuso, qué hace ruido, qué gotea, o simplemente que la casa está muy caliente. Mandamos un técnico de inmediato.' },
     'fn.cta.call':  { en: 'Call (210) 201-0771', es: 'Llama (210) 201-0771' },
     'fn.cta.text':  { en: 'Text us →',           es: 'Escríbenos →' },
     'fn.meta.address': { en: 'Address', es: 'Dirección' },
     'fn.meta.hours':   { en: 'Hours',   es: 'Horario' },
-    'fn.meta.hoursV':  { en: '24/7 — every day, every season', es: '24/7 — todos los días, toda temporada' },
+    'fn.meta.hoursV':  { en: '24/7. Every day, every season.', es: '24/7. Todos los días, toda temporada.' },
     'fn.meta.lang':    { en: 'Languages', es: 'Idiomas' },
     'fn.meta.langV':   { en: 'English &amp; Spanish', es: 'Inglés y Español' },
 

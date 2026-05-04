@@ -1,5 +1,5 @@
 /* ======================================================================
-   Comfort Techs — main interactions
+   Comfort Techs main interactions
    ====================================================================== */
 (function () {
   'use strict';
@@ -24,7 +24,7 @@
       nav.classList.add('open');
       navToggle.setAttribute('aria-expanded', 'true');
       navToggle.setAttribute('aria-label', 'Close menu');
-      /* iOS-safe scroll lock — overflow:hidden on body doesn't work on Safari iOS */
+      /* iOS-safe scroll lock. overflow:hidden on body doesn't work on Safari iOS */
       document.body.dataset.scrollLock = String(scrollY);
       document.body.style.position = 'fixed';
       document.body.style.top = `-${scrollY}px`;
@@ -71,7 +71,7 @@
     }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach((el) => io.observe(el));
 
-    /* layer 2: 600ms — anything within 2x viewport */
+    /* layer 2: 600ms, anything within 2x viewport */
     setTimeout(() => {
       const vh = window.innerHeight;
       revealEls.forEach((el) => {
@@ -86,7 +86,7 @@
     revealEls.forEach((el) => el.classList.add('in'));
   }, 3000);
 
-  /* ---------- count-up numbers (real quantities only — no years) ----------
+  /* ---------- count-up numbers (real quantities only, no years) ----------
      i18n.js rewrites innerHTML on its parents, replacing the [data-count]
      nodes. We (re)bind after every 'i18n:applied' event. On the FIRST apply
      we animate; on subsequent lang switches we just settle the new nodes
