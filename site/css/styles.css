@@ -183,14 +183,14 @@ p{margin:0 0 14px}
 .hero-trust .item b{color:#fff;font-weight:600;letter-spacing:.02em}
 
 /* hero-art */
-.hero-art{position:relative;aspect-ratio:1/1.05;
+.hero-art{position:relative;aspect-ratio:4/5;
   background:linear-gradient(160deg, rgba(14,114,214,.2), rgba(255,106,43,.15));
 }
 .hero-art .frame{
   position:absolute;inset:0;border-radius:var(--r-lg);overflow:hidden;
   box-shadow:0 30px 80px -30px rgba(0,0,0,.7), inset 0 0 0 1px rgba(255,255,255,.1);
 }
-.hero-art .frame img{width:100%;height:100%;object-fit:cover}
+.hero-art .frame img{width:100%;height:100%;object-fit:cover;object-position:center top}
 .hero-art .overlay-card{
   position:absolute;left:18px;bottom:18px;right:18px;
   background:rgba(11,18,32,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
