@@ -20,13 +20,29 @@
 
   function setNavOpen(open) {
     if (open) {
+      const scrollY = window.scrollY;
       nav.classList.add('open');
       navToggle.setAttribute('aria-expanded', 'true');
+      navToggle.setAttribute('aria-label', 'Close menu');
+      /* iOS-safe scroll lock — overflow:hidden on body doesn't work on Safari iOS */
+      document.body.dataset.scrollLock = String(scrollY);
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
       document.body.classList.add('nav-locked');
     } else {
+      const stored = parseInt(document.body.dataset.scrollLock || '0', 10);
       nav.classList.remove('open');
       navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open menu');
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
       document.body.classList.remove('nav-locked');
+      delete document.body.dataset.scrollLock;
+      if (stored) window.scrollTo(0, stored);
     }
   }
   navToggle.addEventListener('click', () => {
@@ -70,8 +86,11 @@
     revealEls.forEach((el) => el.classList.add('in'));
   }, 3000);
 
-  /* ---------- count-up numbers (real quantities only — no years) ---------- */
-  const countEls = document.querySelectorAll('[data-count]');
+  /* ---------- count-up numbers (real quantities only — no years) ----------
+     i18n.js rewrites innerHTML on its parents, replacing the [data-count]
+     nodes. We (re)bind after every 'i18n:applied' event. On the FIRST apply
+     we animate; on subsequent lang switches we just settle the new nodes
+     immediately so the user doesn't see "0" pop in. */
   function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
   function animateCount(el) {
     if (el.dataset.done) return;
@@ -87,50 +106,43 @@
     }
     requestAnimationFrame(tick);
   }
-  if ('IntersectionObserver' in window && !reduceMotion) {
-    const io2 = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCount(entry.target);
-          io2.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    countEls.forEach((el) => io2.observe(el));
-  }
-  /* fallback: settle counters at 2s in case IO never fires */
-  setTimeout(() => {
-    countEls.forEach((el) => {
-      if (!el.dataset.done) {
-        el.textContent = parseFloat(el.dataset.count).toLocaleString();
-        el.dataset.done = '1';
-      }
+  function settleAll() {
+    document.querySelectorAll('[data-count]').forEach((el) => {
+      el.textContent = parseFloat(el.dataset.count).toLocaleString();
+      el.dataset.done = '1';
     });
-  }, 2000);
+  }
+  function bindCountUp() {
+    const countEls = document.querySelectorAll('[data-count]');
+    if ('IntersectionObserver' in window && !reduceMotion) {
+      const io2 = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            io2.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      countEls.forEach((el) => io2.observe(el));
+    }
+    setTimeout(settleAll, 2000);
+  }
+  document.addEventListener('i18n:applied', (e) => {
+    if (e.detail && e.detail.first) bindCountUp();
+    else settleAll();
+  });
 
   /* ---------- GSAP hero parallax (loaded async) ---------- */
   if (typeof gsap !== 'undefined' && !reduceMotion) {
     gsap.registerPlugin(ScrollTrigger);
-
-    /* hero parallax on art */
-    gsap.to('.hero-art', {
-      yPercent: -8,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true,
-      },
-    });
 
     /* hero text reveal */
     gsap.from('.hero h1, .hero-sub, .hero-ctas, .hero-trust', {
       opacity: 0, y: 30, duration: 0.9, stagger: 0.12, ease: 'power3.out',
     });
     gsap.from('.hero-eyebrow', { opacity: 0, y: 20, duration: 0.8, ease: 'power2.out' });
-    gsap.from('.hero-art', {
-      opacity: 0, scale: 0.96, duration: 1.1, ease: 'power3.out', delay: 0.2,
+    gsap.from('.hero-side .chip', {
+      opacity: 0, x: 24, duration: 0.9, stagger: 0.12, ease: 'power3.out', delay: 0.2,
     });
   }
 
