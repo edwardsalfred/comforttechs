@@ -1,0 +1,21 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Local dev artifacts
+.playwright-mcp/
+
+# Screenshots from QA (not source)
+*.jpeg
+!site/assets/**/*.jpeg
+
+# Node (in case anyone runs tooling later)
+node_modules/
+.env
+.env.local
+
+# Build output
+dist/
+.vercel/
+.netlify/

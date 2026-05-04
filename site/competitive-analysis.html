@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Comfort Techs — Competitive Analysis Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f4f0;
+  --ink:#1a1a1a;
+  --muted:#6b6358;
+  --hairline:#e3ddd2;
+  --terracotta:#c45d3e;
+  --card:#fffefa;
+  --shadow:0 1px 2px rgba(0,0,0,.04), 0 12px 28px -12px rgba(60,40,20,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{position:relative;overflow-x:hidden}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;z-index:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .4 0 0 0 0 .35 0 0 0 0 .25 0 0 0 .07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+.wrap{max-width:920px;margin:0 auto;padding:64px 56px;position:relative;z-index:1}
+.cover{padding:120px 0 80px;border-bottom:1px solid var(--hairline);margin-bottom:60px}
+.badge{display:inline-block;padding:6px 14px;border:1px solid var(--terracotta);color:var(--terracotta);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;border-radius:999px;margin-bottom:28px}
+h1{font-family:"Instrument Serif",serif;font-size:84px;line-height:1;letter-spacing:-.02em;font-weight:400;margin:0 0 16px}
+h2{font-family:"Instrument Serif",serif;font-size:46px;line-height:1.05;letter-spacing:-.015em;font-weight:400;margin:80px 0 24px}
+h3{font-family:"Instrument Serif",serif;font-size:28px;line-height:1.15;font-weight:400;margin:36px 0 12px}
+h4{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--terracotta);margin:32px 0 12px}
+.lede{font-family:"Instrument Serif",serif;font-size:24px;line-height:1.4;color:var(--muted);max-width:640px;margin-top:8px}
+.meta{display:flex;gap:24px;margin-top:48px;padding-top:24px;border-top:1px solid var(--hairline);font-size:13px;color:var(--muted);letter-spacing:.04em}
+.meta b{color:var(--ink);font-weight:600;display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:4px}
+p{margin:0 0 14px;max-width:680px}
+.card{background:var(--card);border-left:4px solid var(--terracotta);border-radius:6px;padding:28px 32px;box-shadow:var(--shadow);margin:18px 0;transition:transform .25s ease, box-shadow .25s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 1px 2px rgba(0,0,0,.04), 0 18px 36px -14px rgba(60,40,20,.24)}
+.card .num{font-family:"Instrument Serif",serif;font-size:64px;line-height:1;color:#e8d9c4;display:inline-block;margin-right:14px;vertical-align:middle}
+.card .ctitle{font-family:"Instrument Serif",serif;font-size:24px;line-height:1.2;display:inline-block;vertical-align:middle}
+.swatches{display:flex;gap:8px;margin:14px 0 6px}
+.sw{width:44px;height:44px;border-radius:8px;border:1px solid var(--hairline);box-shadow:inset 0 1px 1px rgba(255,255,255,.4)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{display:inline-block;padding:4px 10px;background:#f1ece2;border:1px solid var(--hairline);border-radius:999px;font-size:11px;letter-spacing:.04em;color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:14px}
+th,td{padding:12px 10px;text-align:left;border-bottom:1px solid var(--hairline)}
+th{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;background:#f1ece2}
+td.score{font-variant-numeric:tabular-nums;font-weight:600}
+.flow{position:relative;padding:8px 0 8px 24px;margin:24px 0}
+.flow::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:repeating-linear-gradient(to bottom, var(--terracotta) 0 4px, transparent 4px 10px);opacity:.4}
+.score-row{display:grid;grid-template-columns:1fr auto;gap:8px 18px;font-size:13px;margin-top:10px}
+.score-row span{color:var(--muted)}
+.score-row b{font-variant-numeric:tabular-nums}
+.takeaway{background:#fff1ea;border-left:4px solid var(--terracotta);padding:16px 22px;margin:14px 0 0;border-radius:0 6px 6px 0;font-size:14px}
+.takeaway b{color:var(--terracotta);font-size:11px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:4px}
+.foot{margin-top:80px;padding-top:32px;border-top:1px solid var(--hairline);font-size:12px;color:var(--muted);letter-spacing:.04em}
+@media (max-width:640px){
+  .wrap{padding:40px 24px}
+  h1{font-size:54px}
+  h2{font-size:34px;margin-top:56px}
+  .meta{flex-direction:column;gap:14px}
+  .card{padding:20px 22px}
+}
+@media print{
+  body{background:#fff}
+  body::before{display:none}
+  .wrap{padding:0;max-width:none}
+  .card{break-inside:avoid;box-shadow:none;border:1px solid var(--hairline);border-left:4px solid var(--terracotta)}
+  h2{break-after:avoid}
+  table{break-inside:avoid}
+  @page{size:A4;margin:18mm}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="cover">
+    <div class="badge">Competitive Analysis</div>
+    <h1>Owning the<br>San Antonio HVAC market.</h1>
+    <p class="lede">A research-backed map of where Comfort Techs sits today, what the top 10% of HVAC sites do differently, and the design choices that will move the needle.</p>
+    <div class="meta">
+      <div><b>Prepared for</b>Comfort Techs Air Conditioning &amp; Heating</div>
+      <div><b>Date</b>May 2026</div>
+      <div><b>Market</b>San Antonio metro, TX</div>
+    </div>
+  </header>
+
+  <h4>Executive Summary</h4>
+  <p>Comfort Techs has the substance: 70+ years combined technician experience, NATE / TACCA / Daikin Comfort Pro credentials, two consecutive Amana Newcomer of the Year awards, a true 24/7 bilingual team, and a real founder story (Isidro Ramirez, TDLR-licensed since 2006). What it lacks is a website that signals any of that in the first three seconds. The current Hibu template reads as generic — every leading competitor in the metro out-presents it.</p>
+  <p>We benchmarked five direct competitors across eight criteria. The winners (Honeycomb Air, Cowboys AC) share five repeatable patterns. Comfort Techs can adopt all five without losing brand equity, and pull ahead with two differentiators competitors cannot copy: <i>Latino-owned, bilingual</i> and <i>back-to-back Amana Newcomer of the Year.</i></p>
+
+  <h2>Competitor profiles</h2>
+
+  <div class="card">
+    <span class="num">01</span><span class="ctitle">Honeycomb Air</span>
+    <p style="margin-top:14px">Modern, conversion-focused, strong brand identity. Hex/honey motif throughout. 5.0 stars on 500+ reviews, 2,000+ customers, 20 years.</p>
+    <div class="swatches">
+      <div class="sw" style="background:#E5A82B" title="Honey gold"></div>
+      <div class="sw" style="background:#1F2937" title="Charcoal navy"></div>
+      <div class="sw" style="background:#FFFFFF;border-color:#ccc" title="White"></div>
+    </div>
+    <div class="score-row">
+      <span>Search visibility</span><b>9</b>
+      <span>Reviews</span><b>10</b>
+      <span>Visual design</span><b>9</b>
+      <span>Mobile</span><b>9</b>
+      <span>Content depth</span><b>8</b>
+      <span>Social proof</span><b>10</b>
+      <span>CTA strategy</span><b>9</b>
+      <span>Speed</span><b>8</b>
+    </div>
+    <div class="tags"><span class="tag">$58 hero offer</span><span class="tag">Sticky phone</span><span class="tag">Real tech photos</span><span class="tag">Comfy Club membership</span></div>
+    <div class="takeaway"><b>Takeaway</b>Strongest competitor. Brand identity is the moat — Comfort Techs can match conversion mechanics; cannot copy the bee.</div>
+  </div>
+
+  <div class="card">
+    <span class="num">02</span><span class="ctitle">Cowboys AC &amp; Heating</span>
+    <p style="margin-top:14px">KSAT "Best HVAC 2025" winner. Family-owned, community-anchored (Wounded Warrior, UTSA Athletics, Sleep in Heavenly Peace). Authorized Trane Dealer.</p>
+    <div class="swatches">
+      <div class="sw" style="background:#C41E3A"></div>
+      <div class="sw" style="background:#003366"></div>
+      <div class="sw" style="background:#666666"></div>
+    </div>
+    <div class="score-row">
+      <span>Search visibility</span><b>9</b>
+      <span>Reviews</span><b>9</b>
+      <span>Visual design</span><b>8</b>
+      <span>Mobile</span><b>8</b>
+      <span>Content depth</span><b>9</b>
+      <span>Social proof</span><b>10</b>
+      <span>CTA strategy</span><b>9</b>
+      <span>Speed</span><b>8</b>
+    </div>
+    <div class="tags"><span class="tag">KSAT 2025 winner</span><span class="tag">Trane dealer</span><span class="tag">Community giving</span><span class="tag">Press logos</span></div>
+    <div class="takeaway"><b>Takeaway</b>Owns "voted #1" framing. Comfort Techs has Amana 2024+2025 — equally strong, currently invisible.</div>
+  </div>
+
+  <div class="card">
+    <span class="num">03</span><span class="ctitle">Beyer Air Conditioning &amp; Heating</span>
+    <p style="margin-top:14px">50+ years in Selma. Faith-led ("Honor God, Relationships, Respect"). 4.8 stars. Multi-trade (Electrical, Water Well).</p>
+    <div class="swatches">
+      <div class="sw" style="background:#0066CC"></div>
+      <div class="sw" style="background:#1F2937"></div>
+      <div class="sw" style="background:#E63946"></div>
+    </div>
+    <div class="score-row">
+      <span>Search visibility</span><b>8</b>
+      <span>Reviews</span><b>8</b>
+      <span>Visual design</span><b>7</b>
+      <span>Mobile</span><b>8</b>
+      <span>Content depth</span><b>9</b>
+      <span>Social proof</span><b>8</b>
+      <span>CTA strategy</span><b>8</b>
+      <span>Speed</span><b>7</b>
+    </div>
+    <div class="tags"><span class="tag">50 yrs</span><span class="tag">Lennox award</span><span class="tag">Generac certified</span></div>
+    <div class="takeaway"><b>Takeaway</b>Faith framing narrows audience. Opens space for Comfort Techs to own "all are welcome" + bilingual service.</div>
+  </div>
+
+  <div class="card">
+    <span class="num">04</span><span class="ctitle">Champion Home Services</span>
+    <p style="margin-top:14px">"Undefeated at Home Since 2007." Multi-trade (HVAC + plumbing + electrical). Sports metaphor over-extended.</p>
+    <div class="swatches">
+      <div class="sw" style="background:#8B6F47"></div>
+      <div class="sw" style="background:#FFFFFF;border-color:#ccc"></div>
+      <div class="sw" style="background:#1F2937"></div>
+    </div>
+    <div class="score-row">
+      <span>Search visibility</span><b>8</b>
+      <span>Reviews</span><b>7</b>
+      <span>Visual design</span><b>7</b>
+      <span>Mobile</span><b>8</b>
+      <span>Content depth</span><b>7</b>
+      <span>Social proof</span><b>7</b>
+      <span>CTA strategy</span><b>8</b>
+      <span>Speed</span><b>7</b>
+    </div>
+    <div class="tags"><span class="tag">Multi-trade</span><span class="tag">Ramsey Trusted</span><span class="tag">Brown palette</span></div>
+    <div class="takeaway"><b>Takeaway</b>Diluted positioning. Comfort Techs wins by staying HVAC-pure with deeper specialization.</div>
+  </div>
+
+  <div class="card">
+    <span class="num">05</span><span class="ctitle">Best Air Conditioning</span>
+    <p style="margin-top:14px">Founded 1978. 40+ years legacy. Visually dated — 1990s brochure layout. Owner-led ("not salesmen, technicians").</p>
+    <div class="swatches">
+      <div class="sw" style="background:#1F3554"></div>
+      <div class="sw" style="background:#FFFFFF;border-color:#ccc"></div>
+    </div>
+    <div class="score-row">
+      <span>Search visibility</span><b>6</b>
+      <span>Reviews</span><b>6</b>
+      <span>Visual design</span><b>4</b>
+      <span>Mobile</span><b>5</b>
+      <span>Content depth</span><b>5</b>
+      <span>Social proof</span><b>6</b>
+      <span>CTA strategy</span><b>7</b>
+      <span>Speed</span><b>6</b>
+    </div>
+    <div class="tags"><span class="tag">Legacy 1978</span><span class="tag">$58 service call</span><span class="tag">Owner guarantee</span></div>
+    <div class="takeaway"><b>Takeaway</b>Vulnerable. Modern presentation alone would beat Best AC on every search.</div>
+  </div>
+
+  <h2>Side-by-side scoring</h2>
+  <table>
+    <thead><tr><th>Competitor</th><th>Search</th><th>Reviews</th><th>Visual</th><th>Mobile</th><th>Content</th><th>Proof</th><th>CTA</th><th>Speed</th><th>Total</th></tr></thead>
+    <tbody>
+      <tr><td>Honeycomb Air</td><td class="score">9</td><td class="score">10</td><td class="score">9</td><td class="score">9</td><td class="score">8</td><td class="score">10</td><td class="score">9</td><td class="score">8</td><td class="score" style="color:var(--terracotta)">72</td></tr>
+      <tr><td>Cowboys AC</td><td class="score">9</td><td class="score">9</td><td class="score">8</td><td class="score">8</td><td class="score">9</td><td class="score">10</td><td class="score">9</td><td class="score">8</td><td class="score" style="color:var(--terracotta)">70</td></tr>
+      <tr><td>Beyer Air</td><td class="score">8</td><td class="score">8</td><td class="score">7</td><td class="score">8</td><td class="score">9</td><td class="score">8</td><td class="score">8</td><td class="score">7</td><td class="score" style="color:var(--terracotta)">63</td></tr>
+      <tr><td>Champion</td><td class="score">8</td><td class="score">7</td><td class="score">7</td><td class="score">8</td><td class="score">7</td><td class="score">7</td><td class="score">8</td><td class="score">7</td><td class="score" style="color:var(--terracotta)">59</td></tr>
+      <tr><td>Best AC</td><td class="score">6</td><td class="score">6</td><td class="score">4</td><td class="score">5</td><td class="score">5</td><td class="score">6</td><td class="score">7</td><td class="score">6</td><td class="score" style="color:var(--terracotta)">45</td></tr>
+    </tbody>
+  </table>
+
+  <h2>SEO landscape &amp; opportunity</h2>
+  <table>
+    <thead><tr><th>Keyword</th><th>Intent</th><th>Current ranker</th><th>Comfort Techs play</th></tr></thead>
+    <tbody>
+      <tr><td>ac repair san antonio</td><td>High</td><td>Cowboys, Honeycomb</td><td>Schema + city pages</td></tr>
+      <tr><td>emergency hvac san antonio</td><td>Urgent</td><td>Cowboys</td><td><b style="color:var(--terracotta)">Easy win</b> — already 24/7</td></tr>
+      <tr><td>amana hvac dealer san antonio</td><td>Branded</td><td>Few</td><td><b style="color:var(--terracotta)">Easy win</b> — claim Amana Newcomer awards</td></tr>
+      <tr><td>bilingual hvac san antonio</td><td>Niche</td><td>None</td><td><b style="color:var(--terracotta)">Differentiator</b> — own outright</td></tr>
+      <tr><td>latino owned hvac san antonio</td><td>Identity</td><td>Few</td><td><b style="color:var(--terracotta)">Differentiator</b> — own outright</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Patterns of the top 10%</h2>
+  <div class="flow">
+    <h3>1. Persistent sticky CTA bar</h3>
+    <p>Phone + "Request Service" never leaves the viewport. Honeycomb, Cowboys, Champion, Beyer all do this. Comfort Techs does not.</p>
+
+    <h3>2. Hero offer above the fold</h3>
+    <p>A tangible price hook ($58 tune-up at Honeycomb, free estimate at Cowboys). Not "Welcome to our website." Comfort Techs has $8,888 system replacement and $89/mo financing — both stronger than competitor offers, both currently buried.</p>
+
+    <h3>3. Real techs in real photos</h3>
+    <p>Honeycomb and Cowboys lead with named technicians on the homepage. Trust forms in 0.5 seconds. Comfort Techs has Isidro and a six-person team already photographed — they belong on the homepage, not buried on /team.</p>
+
+    <h3>4. Trust stack visible early</h3>
+    <p>Star count, BBB, OEM badges (Trane / Daikin / Amana), local press. Top performers stack 4–6 trust signals near the hero. Comfort Techs has Amana Newcomer 2024 + 2025, NATE, TACCA, Daikin Comfort Pro — currently invisible above the fold.</p>
+
+    <h3>5. Two-track CTA</h3>
+    <p>Phone for urgency callers, online form for browsers. Top sites accommodate both. The current Comfort Techs site has the call link but the form path is friction-heavy.</p>
+  </div>
+
+  <h2>Recommended design direction</h2>
+  <p><b>Color palette.</b> Deep HVAC blue (<code>#0B3D91</code>) + bright sky (<code>#0E72D6</code>) + warm orange CTA (<code>#FF6A2B</code>). Avoids competitor red (Cowboys), honey (Honeycomb), brown (Champion), and corporate light blue (Beyer).</p>
+  <p><b>Typography.</b> <i>Inter</i> for the workhorse. <i>Instrument Serif</i> for editorial accents — humanizes the brand and visibly separates Comfort Techs from sans-only competitors.</p>
+  <p><b>Photography.</b> Lead with Isidro's portrait + branded van. Deprecate generic Hibu hero. Treat existing equipment shots with overlay gradient for cohesion.</p>
+  <p><b>Animation.</b> GSAP + ScrollTrigger choreography. Every named competitor is 100% static. A single layer of motion is an instant differentiator at this price tier — used sparingly so the page never feels gimmicky.</p>
+  <p><b>Structure.</b> Single long-scroll homepage. Sticky nav. Twelve services in a card grid. Specials, founder story, team grid, service area, final 24/7 CTA. Conversion-first.</p>
+
+  <div class="foot">
+    <div>Confidential — prepared for Comfort Techs leadership. Not for public distribution.</div>
+    <div style="width:100%; margin-top:20px; padding-top:20px; border-top:1px solid var(--hairline); text-align:center; font-size:12px; letter-spacing:0.08em;">
+      Created by <a href="https://www.chatbotboy.ai/" target="_blank" rel="noopener" style="color:var(--terracotta); font-weight:600; border-bottom:1px solid var(--terracotta); text-decoration:none;">Chatbot Boy AI</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
