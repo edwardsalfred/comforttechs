@@ -441,7 +441,7 @@ section{padding:110px 0;position:relative}
 .foot li{margin:0}
 .foot li a{display:block;padding:.7rem 0;min-height:44px;font-size:14px;color:rgba(255,255,255,.7);transition:color .2s ease;line-height:1.5}
 .foot li a:hover{color:var(--ember)}
-.foot .brand img{height:46px;margin-bottom:18px;filter:brightness(0) invert(1)}
+.foot .brand img{height:64px;margin-bottom:18px}
 .foot .brand p{font-size:14px;color:rgba(255,255,255,.6);max-width:300px}
 .foot .social{display:flex;gap:10px;margin-top:18px}
 .foot .social a{
