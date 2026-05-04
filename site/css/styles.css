@@ -174,7 +174,7 @@ p{margin:0 0 14px}
 /* full-bleed YouTube video background */
 .hero .video-bg{
   position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;
-  background:#000;
+  background:var(--navy-deep);
 }
 .hero .video-bg iframe{
   position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
@@ -184,12 +184,16 @@ p{margin:0 0 14px}
   min-height:56.25vw;
   border:0;
 }
-/* dark overlay for legibility */
+/* light overlay: keeps the video visible while protecting text legibility */
 .hero::before{
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-    linear-gradient(90deg, rgba(7,39,102,.92) 0%, rgba(7,39,102,.78) 38%, rgba(11,18,32,.55) 70%, rgba(11,18,32,.65) 100%),
-    radial-gradient(800px 600px at 0% 100%, rgba(255,106,43,.12), transparent 60%);
+    /* left-side text-protection gradient: darker behind copy, fades right */
+    linear-gradient(90deg, rgba(7,39,102,.78) 0%, rgba(7,39,102,.55) 35%, rgba(11,18,32,.18) 65%, rgba(11,18,32,.22) 100%),
+    /* gentle bottom vignette so trust bar stays readable */
+    linear-gradient(180deg, transparent 0%, transparent 55%, rgba(11,18,32,.45) 100%),
+    /* warm accent glow */
+    radial-gradient(800px 600px at 0% 100%, rgba(255,106,43,.10), transparent 60%);
 }
 .hero::after{
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
